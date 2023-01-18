@@ -1,0 +1,10 @@
+wms:
+  url:
+    login: http://localhost:8080/login  # 登录页面的访问地址
+    main: http://localhost:8080/index # 主页面的访问地址
+  cookie:  # 配置cookie信息, 跳过业务测试的登录操作
+    name: JSESSIONID
+    value: 44073FF8340C621AD448F80FE6C0DE55
+  path:
+    log: log\  # 日志文件存放路径
+    png: png\  # 错误截图文件png文件的存放路径
