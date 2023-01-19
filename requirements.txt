@@ -1,16 +1,14 @@
 selenium==4.1.0
-loguru==0.5.3
+loguru==0.6.0
 openpyxl==3.0.10
 PyYAML==6.0
 pytest==7.2.1
 pytest-rerunfailures==10.2
 allure-pytest==2.9.45
 allure-python-commons==2.9.45
-urllib3==1.26.7
 async-generator==1.10
 atomicwrites==1.4.0
 attrs==21.2.0
-certifi==2021.10.8
 cffi==1.15.0
 colorama==0.4.4
 cryptography==36.0.1
@@ -21,7 +19,6 @@ iniconfig==1.1.1
 outcome==1.1.0
 packaging==21.3
 pluggy==1.0.0
-py==1.11.0
 pycparser==2.21
 pyOpenSSL==21.0.0
 pyparsing==3.0.6
