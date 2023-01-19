@@ -12,12 +12,12 @@ def parse_xlsx(filename, sheet_name="Sheet1"):
     excel = load_workbook(filename)
     excel_data_list = []
     for value in excel[sheet_name].values:
-        if value[0] > 1:
+        if value[0] > 0:
             excel_data_list.append(value[1:])
     excel.close()
     return excel_data_list
 
 
 if __name__ == '__main__':
-    excel_data = parse_xlsx(base_path + "")
+    excel_data = parse_xlsx(base_path + "TestDatas/用户登录测试用例.xlsx")
     print(excel_data)

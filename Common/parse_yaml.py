@@ -2,7 +2,7 @@ import yaml
 from Config.config import base_path
 
 
-def parse_yaml(key, filename=base_path+"Config/tms-data.yaml"):
+def parse_yaml(key, filename=base_path + "Config/tms-data.yaml"):
     """
     解析yaml文件，根据key读取value
     :param key: 多个单词使用.号分割
@@ -18,5 +18,5 @@ def parse_yaml(key, filename=base_path+"Config/tms-data.yaml"):
 
 
 if __name__ == '__main__':
-    value = parse_yaml("")
+    value = parse_yaml("case.login")
     print(value)
