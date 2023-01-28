@@ -1,9 +1,9 @@
 from selenium.webdriver.common.by import By
 from Base.base import BasePage
 from Common.common import open_browser
-from Common.parse_yaml import parse_yaml
+from Common.parse_yaml import PareseYaml
 
-login_url = parse_yaml("tms.url.login")
+login_url = PareseYaml().parse_yaml("tms.url.login")
 
 
 class Login(BasePage):
@@ -37,6 +37,11 @@ class Login(BasePage):
 
         submit_ele = self.get_element(*self.loc_submit_btn)
         self.click(submit_ele)
+
+        self.login_success_check()
+        localstorage = self.get_storage('Admin-Auto-Token')
+        data = PareseYaml().data
+        PareseYaml().switch_yaml(data, 'Admin-Auto-Token', localstorage['Admin-Auto-Token'])
 
     def login_success_check(self):
         self.url_matches(self.loc_login_success)

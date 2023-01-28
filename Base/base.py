@@ -4,8 +4,9 @@ from loguru import logger
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.common.keys import Keys
+from Common.parse_yaml import PareseYaml
 
-png_path = ""
+png_path = PareseYaml().parse_yaml("tms.path.png")
 
 
 class BasePage:
@@ -29,7 +30,7 @@ class BasePage:
         """
         file_path = png_path + f"{doc}_{time.strftime('%y%m%d%H%M%S', time.localtime())}.png"
         try:
-            # self.driver.save_screenshot(file_path)
+            self.driver.save_screenshot(file_path)
             logger.info(f"截图成功, 图片路径:{file_path}")
         except:
             logger.error(f"{doc}-截图失败!")
@@ -49,7 +50,22 @@ class BasePage:
             return element
         except:
             logger.error(f"模块：{doc}，获取元素失败，定位方法{by}，定位表达式{value}")
-            # self.save_screenshot(doc)
+            self.save_screenshot(doc)
+            raise
+
+    def get_storage(self, keyn):
+        """
+        获取storage
+        :key:需要获取的key
+        :return:返回获取的cookies信息
+        """
+        try:
+            localstorage = self.driver.execute_script('return window.localStorage;')
+            keypair = dict((key, value) for key, value in localstorage.items() if key == keyn)
+            logger.info(f"成功获取local storage")
+            return keypair
+        except:
+            logger.error(f"获取local storage失败")
             raise
 
     def get_all_elements(self, by, value, doc=''):

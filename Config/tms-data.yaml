@@ -1,11 +1,11 @@
-tms:
-  url:
-    login: http://auto.test.wangoon.cn/login  # 登录页面的访问地址
-    main: http://auto.test.wangoon.cn/index # 主页面的访问地址
-  token: # 配置token信息, 跳过业务测试的登录操作
-    value: 44073FF8340C621AD448F80FE6C0DE55
-  path:
-    log: Log\  # 日志文件存放路径
-    png: png\  # 错误截图文件png文件的存放路径
 case:
-  login: TestDatas\用户登录测试用例.xlsx
+  login: TestDatas\login_case.xlsx
+tms:
+  path:
+    log: Log\
+    png: Png\
+  storage:
+    Admin-Auto-Token: 0008ce5ee5e746038f9b0b7af55bbcfe
+  url:
+    login: http://auto.test.wangoon.cn/login
+    main: http://auto.test.wangoon.cn/index

@@ -19,5 +19,5 @@ def parse_xlsx(filename, sheet_name="Sheet1"):
 
 
 if __name__ == '__main__':
-    excel_data = parse_xlsx(base_path + "TestDatas/用户登录测试用例.xlsx")
+    excel_data = parse_xlsx(base_path + "TestDatas/login_case.xlsx")
     print(excel_data)
