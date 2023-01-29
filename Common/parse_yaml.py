@@ -61,5 +61,4 @@ class PareseYaml:
 if __name__ == '__main__':
     data = PareseYaml().data
     value = PareseYaml().switch_yaml(data, 'Admin-Auto-Token', 'a')
-    print(data)
     print(value)

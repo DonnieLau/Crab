@@ -36,6 +36,21 @@ class BasePage:
             logger.error(f"{doc}-截图失败!")
             raise
 
+    def get_storage(self, keyn):
+        """
+        获取storage
+        :key:需要获取的key
+        :return:返回获取的cookies信息
+        """
+        try:
+            localstorage = self.driver.execute_script('return window.localStorage;')
+            keypair = dict((key, value) for key, value in localstorage.items() if key == keyn)
+            logger.info(f"成功获取local storage")
+            return keypair
+        except:
+            logger.error(f"获取local storage失败")
+            raise
+
     def get_element(self, by, value, doc=''):
         """
         定位元素
@@ -51,21 +66,6 @@ class BasePage:
         except:
             logger.error(f"模块：{doc}，获取元素失败，定位方法{by}，定位表达式{value}")
             self.save_screenshot(doc)
-            raise
-
-    def get_storage(self, keyn):
-        """
-        获取storage
-        :key:需要获取的key
-        :return:返回获取的cookies信息
-        """
-        try:
-            localstorage = self.driver.execute_script('return window.localStorage;')
-            keypair = dict((key, value) for key, value in localstorage.items() if key == keyn)
-            logger.info(f"成功获取local storage")
-            return keypair
-        except:
-            logger.error(f"获取local storage失败")
             raise
 
     def get_all_elements(self, by, value, doc=''):
