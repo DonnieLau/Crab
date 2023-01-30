@@ -2,7 +2,7 @@ import pytest
 import logging
 import allure
 
-from PageLocators.login_ims import Login
+from PageLocators.IMS.login_ims import Login
 from Common.parse_yaml import PareseYaml
 from Common.parse_xlsx import parse_xlsx
 from Config.config import base_path

@@ -4,7 +4,7 @@ from Config.config import base_path
 
 
 class PareseYaml:
-    def __init__(self, file=base_path + "Config/tms-data.yaml"):
+    def __init__(self, file=base_path + "Config/keycaps.yaml"):
         if os.path.isfile(file):
             self.file = file
         else:
