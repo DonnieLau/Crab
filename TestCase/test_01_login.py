@@ -3,11 +3,11 @@ import logging
 import allure
 
 from PageLocators.login import Login
-from Common.parse_yaml import parse_yaml
+from Common.parse_yaml import PareseYaml
 from Common.parse_xlsx import parse_xlsx
 from Config.config import base_path
 
-login_data_path = base_path + parse_yaml("case.login")
+login_data_path = base_path + PareseYaml().parse_yaml("case.login")
 login_data = parse_xlsx(login_data_path)
 
 
