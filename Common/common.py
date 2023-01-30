@@ -11,11 +11,11 @@ logger.add(filename_info, level="INFO", encoding="utf-8", rotation="00:00")
 logger.add(filename_error, level="ERROR", encoding="utf-8", rotation="00:00")
 
 
-# 打开浏览器的函数
+# 打开浏览器
 def open_browser():
-    driver = webdriver.Chrome()  # 使用google浏览器
-    driver.maximize_window()  # 最大化窗口
-    return driver  # 返回浏览器驱动
+    driver = webdriver.Chrome()
+    driver.maximize_window()
+    return driver
 
 
 

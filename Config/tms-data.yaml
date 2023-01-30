@@ -5,7 +5,7 @@ tms:
     log: Log\
     png: Png\
   storage:
-    Admin-Auto-Token: 0008ce5ee5e746038f9b0b7af55bbcfe
+    Admin-Auto-Token: 990094e7e715455dbad4945b8060a2fe
   url:
     login: http://auto.test.wangoon.cn/login
     main: http://auto.test.wangoon.cn/index

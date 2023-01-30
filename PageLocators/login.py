@@ -38,11 +38,6 @@ class Login(BasePage):
         submit_ele = self.get_element(*self.loc_submit_btn)
         self.click(submit_ele)
 
-        self.login_success_check()
-        localstorage = self.get_storage('Admin-Auto-Token')
-        data = PareseYaml().data
-        PareseYaml().switch_yaml(data, 'Admin-Auto-Token', localstorage['Admin-Auto-Token'])
-
     def login_success_check(self):
         self.url_matches(self.loc_login_success)
 
@@ -51,6 +46,12 @@ class Login(BasePage):
 
     def login_error_check(self):
         self.wait_elements_all_presence(self.loc_login_error, doc="登录失败，账号密码不正确")
+
+    # 登录之后读取Local Storage并进行储存
+    def login_setup_storage(self):
+        localstorage = self.get_storage('Admin-Auto-Token')
+        data = PareseYaml().data
+        PareseYaml().switch_yaml(data, 'Admin-Auto-Token', localstorage['Admin-Auto-Token'])
 
 
 if __name__ == '__main__':
