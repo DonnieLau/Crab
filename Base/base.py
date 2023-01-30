@@ -6,7 +6,7 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.common.keys import Keys
 from Common.parse_yaml import PareseYaml
 
-png_path = PareseYaml().parse_yaml("tms.path.png")
+png_path = PareseYaml().parse_yaml("path.png")
 
 
 class BasePage:

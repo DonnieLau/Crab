@@ -1,11 +1,23 @@
 case:
   login: TestDatas\login_case.xlsx
+wms:
+  storage:
+    Admin-Auto-Token: aa
+  url:
+    login: http://wms.test.wangoon.cn/login
+    main: http://wms.test.wangoon.cn/dashboard
+ims:
+  storage:
+    Admin-Auto-Token: aa
+  url:
+    login: aa
+    main: http://ims-new.test.wangoon.cn/dashboard
 tms:
-  path:
-    log: Log\
-    png: Png\
   storage:
     Admin-Auto-Token: 990094e7e715455dbad4945b8060a2fe
   url:
     login: http://auto.test.wangoon.cn/login
     main: http://auto.test.wangoon.cn/index
+path:
+  log: Log\
+  png: Png\
