@@ -6,11 +6,12 @@ from Common.parse_yaml import PareseYaml
 main_url = PareseYaml().parse_yaml("tms.url.main")
 
 
-class Tms_dic_manage(BasePage):
+class WaybillManage(BasePage):
     def __init__(self):
         driver = open_browser()
         driver.get(main_url)
 
+        # 通过yaml配置文件获取storage绕过登录
         localstorage = PareseYaml().parse_yaml("tms.storage")
         (key, value), = localstorage.items()
         driver.execute_script("window.localStorage.clear();")
@@ -22,4 +23,4 @@ class Tms_dic_manage(BasePage):
 
 
 if __name__ == '__main__':
-    a = Tms_dic_manage()
+    a = WaybillManage()

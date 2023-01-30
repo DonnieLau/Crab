@@ -27,7 +27,7 @@ class TestLogin:
             self.login.login_success_check()
             self.login.login_setup_storage()
             assert "退出登录" in self.login.driver.page_source
-        elif status == 2: #租户错误
+        elif status == 2:  # 租户错误
             self.login.login_tenant_check()
             assert "租户不存在" in self.login.driver.page_source
         elif status == 0:  # 用户名或者密码错误
